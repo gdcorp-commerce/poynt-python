@@ -128,7 +128,7 @@ class API(object):
             self.expires_at = now + json['expiresIn']
 
     def request(self, method, url, json=None, headers=None, form=None,
-            force_token_refresh=False):
+                force_token_refresh=False):
         """
         Makes a request against API service. Refreshes your access token if
         necessary. Use this for all requests in the SDK!
