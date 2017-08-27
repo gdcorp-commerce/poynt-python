@@ -13,19 +13,19 @@ class Customer():
         Get all customers of a business by various criteria.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
 
         Keyword arguments:
-        start_at -- get customers created after this time in seconds
-        start_offset -- the numeric offset to start the list (for pagination)
-        end_at -- get customers created before this time in seconds
-        limit -- how many customers to return (for pagination)
-        card_number_first_6 -- return customers with card numbers starting with this
-        card_number_last_4 -- return customers with card numbers ending with this
-        card_expiration_month -- return customers with this card expiration month
-        card_expiration_year -- return customers with this card expiration year
-        card_holder_first_name -- return customers with first name matching this
-        card_holder_last_name -- return customers with last name matching this
+        start_at (int, optional): get customers created after this time in seconds
+        start_offset (int, optional): the numeric offset to start the list (for pagination)
+        end_at (int, optional): get customers created before this time in seconds
+        limit (int, optional): how many customers to return (for pagination)
+        card_number_first_6 (str, optional): return customers with card numbers starting with this
+        card_number_last_4 (str, optional): return customers with card numbers ending with this
+        card_expiration_month (str, optional): return customers with this card expiration month
+        card_expiration_year (str, optional): return customers with this card expiration year
+        card_holder_first_name (str, optional): return customers with first name matching this
+        card_holder_last_name (str, optional): return customers with last name matching this
         """
 
         params = {}
@@ -63,8 +63,8 @@ class Customer():
         Get a single customer at a business.
 
         Arguments:
-        business_id -- the business ID
-        customer_id -- the customer ID
+        business_id (str): the business ID
+        customer_id (str): the customer ID
         """
 
         api = API.shared_instance()

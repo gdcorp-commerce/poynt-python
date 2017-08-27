@@ -10,13 +10,13 @@ class Catalog():
         Get all catalogs at a business.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
 
         Keyword arguments:
-        start_at -- get catalogs created after this time in seconds
-        start_offset -- the numeric offset to start the list (for pagination)
-        end_at -- get catalogs created before this time in seconds
-        limit -- how many catalogs to return (for pagination)
+        start_at (int, optional): get catalogs created after this time in seconds
+        start_offset (int, optional): the numeric offset to start the list (for pagination)
+        end_at (int, optional): get catalogs created before this time in seconds
+        limit (int, optional): how many catalogs to return (for pagination)
         """
 
         params = {}
@@ -42,8 +42,8 @@ class Catalog():
         Get a single catalog for a business.
 
         Arguments:
-        business_id -- the business ID
-        catalog_id -- the catalog ID
+        business_id (str): the business ID
+        catalog_id (str): the catalog ID
         """
 
         api = API.shared_instance()
@@ -59,8 +59,8 @@ class Catalog():
         the Catalog.
 
         Arguments:
-        business_id -- the business ID
-        catalog_id -- the catalog ID
+        business_id (str): the business ID
+        catalog_id (str): the catalog ID
         """
 
         api = API.shared_instance()
@@ -75,9 +75,9 @@ class Catalog():
         Get a single category in a catalog for a business.
 
         Arguments:
-        business_id -- the business ID
-        catalog_id -- the catalog ID
-        category_id -- the category ID
+        business_id (str): the business ID
+        catalog_id (str): the catalog ID
+        category_id (str): the category ID
         """
 
         api = API.shared_instance()

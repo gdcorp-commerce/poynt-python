@@ -19,7 +19,7 @@ setup(
     long_description=__doc__,
     author='Charles Feng',
     author_email='c@poynt.com',
-    url='https://poynt.com/developers',
+    url='https://github.com/poynt/poynt-python',
     license='MIT',
     install_requires=['requests', 'pyjwt'],
     classifiers=[

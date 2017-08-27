@@ -10,13 +10,13 @@ class Tax():
         Get a list of taxes at a business.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
 
         Keyword arguments:
-        start_at -- get taxes created after this time in seconds
-        start_offset -- the numeric offset to start the list (for pagination)
-        end_at -- get taxes created before this time in seconds
-        limit -- how many taxes to return (for pagination)
+        start_at (int, optional): get taxes created after this time in seconds
+        start_offset (int, optional): the numeric offset to start the list (for pagination)
+        end_at (int, optional): get taxes created before this time in seconds
+        limit (int, optional): how many taxes to return (for pagination)
         """
 
         params = {}
@@ -42,8 +42,8 @@ class Tax():
         Get a single tax for a business.
 
         Arguments:
-        business_id -- the business ID
-        tax_id -- the tax ID
+        business_id (str): the business ID
+        tax_id (str): the tax ID
         """
 
         api = API.shared_instance()

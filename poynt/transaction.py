@@ -15,30 +15,30 @@ class Transaction():
         Get all transactions at a business by various criteria.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
 
         Keyword arguments:
-        start_at -- get txns created after this time in seconds
-        start_offset -- the numeric offset to start the list (for pagination)
-        end_at -- get txns created before this time in seconds
-        limit -- how many txns to return (for pagination)
-        card_number_first_6 -- return txns with card numbers starting with this
-        card_number_last_4 -- return txns with card numbers ending with this
-        card_expiration_month -- return txns with this card expiration month
-        card_expiration_year -- return txns with this card expiration year
-        card_holder_first_name -- return txns with first name matching this
-        card_holder_last_name -- return txns with last name matching this
-        store_id -- return txns from this store
-        device_id -- return txns from this device
-        search_key -- instead of specifying which exact field to look at, the
-                      client can simply pass this search key and the server will
-                      look at various different fields,
-        action -- only fetch txns with this action
-        status -- only fetch txns with this status
-        transaction_ids -- only fetch txns matching these ids (comma separated)
-        auth_only - only fetch auth only txns
-        unsettled_only - only fetch unsettled txns
-        credit_debit_only - only fetch credit/debit txns
+        start_at (int, optional): get txns created after this time in seconds
+        start_offset (int, optional): the numeric offset to start the list (for pagination)
+        end_at (int, optional): get txns created before this time in seconds
+        limit (int, optional): how many txns to return (for pagination)
+        card_number_first_6 (str, optional): return txns with card numbers starting with this
+        card_number_last_4 (str, optional): return txns with card numbers ending with this
+        card_expiration_month (str, optional): return txns with this card expiration month
+        card_expiration_year (str, optional): return txns with this card expiration year
+        card_holder_first_name (str, optional): return txns with first name matching this
+        card_holder_last_name (str, optional): return txns with last name matching this
+        store_id (str, optional): return txns from this store
+        device_id (str, optional): return txns from this device
+        search_key (str, optional): instead of specifying which exact field to look at, the
+                                    client can simply pass this search key and the server will
+                                    look at various different fields,
+        action (str, optional): only fetch txns with this action
+        status (str, optional): only fetch txns with this status
+        transaction_ids (str, optional): only fetch txns matching these ids (comma separated)
+        auth_only (bool, optional): only fetch auth only txns
+        unsettled_only (bool, optional): only fetch unsettled txns
+        credit_debit_only (bool, optional): only fetch credit/debit txns
         """
 
         params = {}
@@ -94,8 +94,8 @@ class Transaction():
         Get a single transaction at a business.
 
         Arguments:
-        business_id -- the business ID
-        transaction_id -- the transaction ID
+        business_id (str): the business ID
+        transaction_id (str): the transaction ID
         """
 
         api = API.shared_instance()

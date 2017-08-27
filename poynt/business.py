@@ -9,7 +9,7 @@ class Business():
         Gets a business by ID.
 
         Arguments:
-        business_id -- the business ID to get
+        business_id (str): the business ID to get
         """
 
         api = API.shared_instance()

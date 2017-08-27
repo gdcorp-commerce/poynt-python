@@ -9,7 +9,7 @@ class BusinessUser():
         Get all users at a business.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
         """
 
         api = API.shared_instance()
@@ -24,8 +24,8 @@ class BusinessUser():
         Get a single user at a business.
 
         Arguments:
-        business_id -- the business ID
-        business_user_id -- the user ID
+        business_id (str): the business ID
+        business_user_id (str): the user ID
         """
 
         api = API.shared_instance()

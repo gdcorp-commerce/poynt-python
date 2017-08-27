@@ -22,10 +22,10 @@ class API(object):
         to the Poynt API.
 
         Keyword arguments:
-        key -- the PEM-encoded private key associated with the application
-        filename -- the file where the PEM-encoded private key is stored
-        env -- optional environment param. Defaults to "prod"
-        application_id -- your app's application ID
+        key (str): the PEM-encoded private key associated with the application
+        filename (str): the file where the PEM-encoded private key is stored
+        env (str, optional): optional environment param. Defaults to "prod"
+        application_id (str): your app's application ID
         """
 
         if key:
@@ -70,14 +70,14 @@ class API(object):
         You shouldn't use this in your SDK methods.
 
         Arguments:
-        method -- the request method, e.g. GET, POST, PATCH, etc.
-        url -- the request relative URL, e.g. /businesses
+        method (str): the request method, e.g. GET, POST, PATCH, etc.
+        url (str): the request relative URL, e.g. /businesses
 
         Keyword arguments:
-        json -- a dict of request data to send, encoded as JSON
-        headers -- a dict of request headers to send
-        form -- a dict of request data to send, encoded as a form. Use this or JSON
-        params -- a dict of request params to send in the querystring
+        json (dict, optional): request data to send, encoded as JSON
+        headers (dict, optional): request headers to send
+        form (dict, optional): request data to send, encoded as a form. Use this or json
+        params (dict, optional): request params to send in the querystring
         """
 
         headers = self.request_headers()
@@ -153,15 +153,15 @@ class API(object):
         necessary. Use this for all requests in the SDK!
 
         Arguments:
-        method -- the request method, e.g. GET, POST, PATCH, etc.
-        url -- the request relative URL, e.g. /businesses
+        method (str): the request method, e.g. GET, POST, PATCH, etc.
+        url (str): the request relative URL, e.g. /businesses
 
         Keyword arguments:
-        json -- a dict of request data to send, encoded as JSON
-        headers -- a dict of request headers to send
-        form -- a dict of request data to send, encoded as a form. Use this or JSON
-        params -- a dict of request params to send in the querystring
-        force_token_refresh -- whether to force refresh the access token or not
+        json (dict, optional): request data to send, encoded as JSON
+        headers (dict, optional): request headers to send
+        form (dict, optional): request data to send, encoded as a form. Use this or JSON
+        params (dict, optional): request params to send in the querystring
+        force_token_refresh (bool, optional): whether to force refresh the access token or not
         """
 
         if self.access_token_is_expired() or force_token_refresh:

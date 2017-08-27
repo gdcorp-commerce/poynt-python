@@ -13,20 +13,20 @@ class Order():
         Get all orders at a business by various criteria.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
 
         Keyword arguments:
-        start_at -- get orders created after this time in seconds
-        start_offset -- the numeric offset to start the list (for pagination)
-        end_at -- get orders created before this time in seconds
-        limit -- how many orders to return (for pagination)
-        card_number_first_6 -- return orders with card numbers starting with this
-        card_number_last_4 -- return orders with card numbers ending with this
-        card_expiration_month -- return orders with this card expiration month
-        card_expiration_year -- return orders with this card expiration year
-        card_holder_first_name -- return orders with first name matching this
-        card_holder_last_name -- return orders with last name matching this
-        store_id -- return orders from this store
+        start_at (int, optional): get orders created after this time in seconds
+        start_offset (int, optional): the numeric offset to start the list (for pagination)
+        end_at (int, optional): get orders created before this time in seconds
+        limit (int, optional): how many orders to return (for pagination)
+        card_number_first_6 (str, optional): return orders with card numbers starting with this
+        card_number_last_4 (str, optional): return orders with card numbers ending with this
+        card_expiration_month (str, optional): return orders with this card expiration month
+        card_expiration_year (str, optional): return orders with this card expiration year
+        card_holder_first_name (str, optional): return orders with first name matching this
+        card_holder_last_name (str, optional): return orders with last name matching this
+        store_id (str, optional): return orders from this store
         """
 
         params = {}
@@ -66,8 +66,8 @@ class Order():
         Get a single order at a business.
 
         Arguments:
-        business_id -- the business ID
-        order_id -- the order ID
+        business_id (str): the business ID
+        order_id (str): the order ID
         """
 
         api = API.shared_instance()

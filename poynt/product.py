@@ -10,13 +10,13 @@ class Product():
         Get a list of products at a business.
 
         Arguments:
-        business_id -- the business ID
+        business_id (str): the business ID
 
         Keyword arguments:
-        start_at -- get products created after this time in seconds
-        start_offset -- the numeric offset to start the list (for pagination)
-        end_at -- get products created before this time in seconds
-        limit -- how many products to return (for pagination)
+        start_at (int, optional): get products created after this time in seconds
+        start_offset (int, optional): the numeric offset to start the list (for pagination)
+        end_at (int, optional): get products created before this time in seconds
+        limit (int, optional): how many products to return (for pagination)
         """
 
         params = {}
@@ -42,8 +42,8 @@ class Product():
         Get a list of products by ID.
 
         Arguments:
-        business_id -- the business ID
-        product_ids -- a list of product ids
+        business_id (str): the business ID
+        product_ids (list of str): a list of product ids
         """
 
         params = {
@@ -63,8 +63,8 @@ class Product():
         Get a single product for a business.
 
         Arguments:
-        business_id -- the business ID
-        product_id -- the product ID
+        business_id (str): the business ID
+        product_id (str): the product ID
         """
 
         api = API.shared_instance()
