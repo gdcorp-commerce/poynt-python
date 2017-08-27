@@ -37,6 +37,7 @@ Then, make a request signed with your app private key:
 
 ```python
 business, status_code = poynt.Business.getBusiness('00000000-0000-0000-0000-000000000000')
+
 if status_code is 200:
     # do something with business
 else:
