@@ -113,7 +113,7 @@ class API(object):
 
         my_jwt = jwt.decode(self.access_token, verify=False)
 
-        if my_jwt.exp < int(round(time.time())) + 60:
+        if my_jwt['exp'] < int(round(time.time())) + 60:
             return True
 
         return False
@@ -207,4 +207,5 @@ class API(object):
             env=poynt.env,
             application_id=poynt.application_id
         )
+
         return shared_instance

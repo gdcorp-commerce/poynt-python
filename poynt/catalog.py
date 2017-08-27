@@ -48,8 +48,7 @@ class Catalog():
 
         api = API.shared_instance()
         return api.request(
-            url='/businesses/%s/catalogs/%s' % (
-                business_id, catalog_id),
+            url='/businesses/%s/catalogs/%s' % (business_id, catalog_id),
             method='GET'
         )
 
@@ -66,8 +65,7 @@ class Catalog():
 
         api = API.shared_instance()
         return api.request(
-            url='/businesses/%s/catalogs/%s/full' % (
-                business_id, catalog_id),
+            url='/businesses/%s/catalogs/%s/full' % (business_id, catalog_id),
             method='GET'
         )
 

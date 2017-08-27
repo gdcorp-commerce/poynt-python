@@ -18,3 +18,7 @@ from poynt.businessuser import BusinessUser
 from poynt.catalog import Catalog
 from poynt.customer import Customer
 from poynt.hook import Hook
+from poynt.order import Order
+from poynt.product import Product
+from poynt.tax import Tax
+from poynt.transaction import Transaction
