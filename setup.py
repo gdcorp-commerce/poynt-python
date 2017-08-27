@@ -2,7 +2,7 @@
 
 """
 Poynt
------
+
 The official Poynt Python SDK. Connect to the Poynt API, get/create business
 information, and send cloud messages to your terminal app.
 """
@@ -23,7 +23,7 @@ setup(
     author_email='c@poynt.com',
     url='https://poynt.com/developers',
     license='MIT',
-    install_requires=['requests', 'cryptography'],
+    install_requires=['requests', 'pyjwt'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

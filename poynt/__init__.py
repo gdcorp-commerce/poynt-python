@@ -1,3 +1,9 @@
+"""
+Poynt Python SDK
+
+Author
+Charles Feng <c@poynt.com>
+"""
 
 application_id = None
 env = None
