@@ -7,6 +7,9 @@ class Business():
     def getBusiness(cls, business_id):
         """
         Gets a business by ID.
+
+        Arguments:
+        business_id -- the business ID to get
         """
 
         api = API.shared_instance()

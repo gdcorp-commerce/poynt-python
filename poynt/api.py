@@ -20,6 +20,12 @@ class API(object):
         """
         Instantiates the API class, which creates and authenticates requests
         to the Poynt API.
+
+        Keyword arguments:
+        key -- the PEM-encoded private key associated with the application
+        filename -- the file where the PEM-encoded private key is stored
+        env -- optional environment param. Defaults to "prod"
+        application_id -- your app's application ID
         """
 
         if key:
@@ -43,7 +49,7 @@ class API(object):
 
     def request_headers(self):
         """
-        Private method that Ggenerates request headers for Poynt API requests.
+        Private method that generates request headers for Poynt API requests.
         """
 
         headers = {
@@ -57,10 +63,21 @@ class API(object):
 
         return headers
 
-    def naked_request(self, method, url, json=None, headers=None, form=None):
+    def naked_request(self, method, url, json=None, headers=None, form=None,
+                      params=None):
         """
         Private method that makes a request to Poynt APIs without error protection.
-        You shouldn't use this publicly.
+        You shouldn't use this in your SDK methods.
+
+        Arguments:
+        method -- the request method, e.g. GET, POST, PATCH, etc.
+        url -- the request relative URL, e.g. /businesses
+
+        Keyword arguments:
+        json -- a dict of request data to send, encoded as JSON
+        headers -- a dict of request headers to send
+        form -- a dict of request data to send, encoded as a form. Use this or JSON
+        params -- a dict of request params to send in the querystring
         """
 
         headers = self.request_headers()
@@ -72,6 +89,7 @@ class API(object):
                 url=self.api_root + url,
                 data=form,
                 headers=headers,
+                params=params,
             )
         else:
             r = self.session.request(
@@ -79,6 +97,7 @@ class API(object):
                 url=self.api_root + url,
                 json=json,
                 headers=headers,
+                params=params,
             )
 
         return r.json(), r.status_code
@@ -128,10 +147,21 @@ class API(object):
             self.expires_at = now + json['expiresIn']
 
     def request(self, method, url, json=None, headers=None, form=None,
-                force_token_refresh=False):
+                params=None, force_token_refresh=False):
         """
         Makes a request against API service. Refreshes your access token if
         necessary. Use this for all requests in the SDK!
+
+        Arguments:
+        method -- the request method, e.g. GET, POST, PATCH, etc.
+        url -- the request relative URL, e.g. /businesses
+
+        Keyword arguments:
+        json -- a dict of request data to send, encoded as JSON
+        headers -- a dict of request headers to send
+        form -- a dict of request data to send, encoded as a form. Use this or JSON
+        params -- a dict of request params to send in the querystring
+        force_token_refresh -- whether to force refresh the access token or not
         """
 
         if self.access_token_is_expired() or force_token_refresh:
@@ -143,6 +173,7 @@ class API(object):
             json=json,
             headers=headers,
             form=form,
+            params=params,
         )
 
         if status_code is 401 and json['code'] is 'INVALID_ACCESS_TOKEN':
@@ -152,6 +183,7 @@ class API(object):
                 json=json,
                 headers=headers,
                 form=form,
+                params=params,
                 force_token_refresh=True,
             )
 
