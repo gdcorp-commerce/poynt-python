@@ -12,11 +12,9 @@ try:
 except ImportError:
     from distutils.core import setup
 
-exec(open('poynt/version.py').read())
-
 setup(
     name='poynt',
-    version=__version__,
+    version='0.0.3',
     description='The official Poynt Python SDK.',
     long_description=__doc__,
     author='Charles Feng',

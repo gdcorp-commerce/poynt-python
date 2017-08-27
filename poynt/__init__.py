@@ -10,7 +10,6 @@ env = None
 filename = None
 key = None
 
-from poynt.version import __version__
 from poynt.api import API
 
 from poynt.business import Business
