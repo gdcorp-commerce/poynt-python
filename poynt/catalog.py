@@ -1,4 +1,5 @@
 from poynt import API
+from poynt.helpers import json_patch
 
 
 class Catalog():
@@ -138,6 +139,22 @@ class Catalog():
             url='/businesses/%s/catalogs/%s' % (business_id, catalog_id),
             method='PATCH',
             json=patch,
+        )
+
+    @classmethod
+    def delete_catalog(cls, business_id, catalog_id):
+        """
+        Deletes a single catalog for a business.
+
+        Arguments:
+        business_id (str): the business ID
+        catalog_id (str): the catalog ID
+        """
+
+        api = API.shared_instance()
+        return api.request(
+            url='/businesses/%s/catalogs/%s' % (business_id, catalog_id),
+            method='DELETE'
         )
 
     @classmethod

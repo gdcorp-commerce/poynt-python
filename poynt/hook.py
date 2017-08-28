@@ -62,3 +62,33 @@ class Hook():
             method='POST',
             json=json,
         )
+
+    @classmethod
+    def get_hook(cls, hook_id):
+        """
+        Gets a hook by ID.
+
+        Arguments:
+        hook_id (str): hook ID
+        """
+
+        api = API.shared_instance()
+        return api.request(
+            url='/hooks/%s' % hook_id,
+            method='GET'
+        )
+
+    @classmethod
+    def delete_hook(cls, hook_id):
+        """
+        Deletes a hook.
+
+        Arguments:
+        hook_id (str): hook ID
+        """
+
+        api = API.shared_instance()
+        return api.request(
+            url='/hooks/%s' % hook_id,
+            method='DELETE'
+        )

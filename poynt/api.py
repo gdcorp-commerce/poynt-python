@@ -28,11 +28,18 @@ class API(object):
         application_id (str): your app's application ID
         """
 
-        if key:
+        if key is not None:
             self.key = key
-        else:
+        elif filename is not None:
             f = open(filename, 'r')
             self.key = f.read()
+        else:
+            raise ValueError(
+                "Either poynt.key or poynt.filename must be specified")
+
+        if application_id is None:
+            raise ValueError(
+                "Application ID must be specified")
 
         self.application_id = application_id
         self.env = env
