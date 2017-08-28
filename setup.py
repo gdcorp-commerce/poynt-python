@@ -14,13 +14,14 @@ except ImportError:
 
 setup(
     name='poynt',
-    version='0.0.7',
+    version='0.0.8',
     description='The official Poynt Python SDK.',
     long_description=__doc__,
     author='Charles Feng',
     author_email='c@poynt.com',
     url='https://github.com/poynt/poynt-python',
     license='MIT',
+    packages=['poynt'],
     install_requires=['requests', 'pyjwt'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
