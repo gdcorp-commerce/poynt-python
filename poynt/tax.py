@@ -1,4 +1,5 @@
 from poynt import API
+from poynt.helpers import json_patch
 
 
 class Tax():

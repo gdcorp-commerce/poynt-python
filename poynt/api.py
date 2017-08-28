@@ -42,13 +42,13 @@ class API(object):
                 "Application ID must be specified")
 
         self.application_id = application_id
-        self.env = env
-
         self.api_version = '1.2'
+
         if env in poynt_urls:
-            self.api_root = poynt_urls[env]
+            self.env = env
         else:
-            self.api_root = poynt_urls['prod']
+            self.env = 'prod'
+        self.api_root = poynt_urls[self.env]
 
         self.session = requests.Session()
         self.access_token = None
