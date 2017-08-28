@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.0.8 (2017/08/27)
+- Export the correct `poynt` package.
+
 ### v0.0.6 (2017/08/27)
 - Support for `get_store` endpoint.
 
