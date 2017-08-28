@@ -1,6 +1,6 @@
 ## Change Log
 
-### v0.0.9 (2017/08/29)
+### v0.0.9 (2017/08/28)
 - Support for `delete_catalog`, `get_hook`, `delete_hook` endpoints.
 
 ### v0.0.8 (2017/08/27)
