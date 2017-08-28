@@ -48,11 +48,19 @@ We'll handle all the request signing, token refresh, etc. for you!
 
 ## Namespaces and methods
 
+### [CloudMessages](https://poynt.com/docs/api/#cloudmessages-index)
+
+* `poynt.CloudMessage.send_cloud_message`
+* `poynt.CloudMessage.send_raw_cloud_message`
+
+### [Hooks](https://poynt.com/docs/api/#hooks-index)
+
+* `poynt.Hook.get_hooks`
+* `poynt.Hook.create_hook`
+
 ### [Businesses](https://poynt.com/docs/api/#businesses-index)
 
 * `poynt.Business.get_business`
-
-### Stores
 
 ### [Orders](https://poynt.com/docs/api/#orders-index)
 
@@ -64,11 +72,6 @@ We'll handle all the request signing, token refresh, etc. for you!
 * `poynt.Transaction.get_transactions`
 * `poynt.Transaction.get_transaction`
 
-### [Business Users](https://poynt.com/docs/api/#business-users-index)
-
-* `poynt.BusinessUser.get_business_users`
-* `poynt.BusinessUser.get_business_user`
-
 ### [Customers](https://poynt.com/docs/api/#customers-index)
 
 * `poynt.Customer.get_customers`
@@ -79,20 +82,34 @@ We'll handle all the request signing, token refresh, etc. for you!
 * `poynt.Catalog.get_catalogs`
 * `poynt.Catalog.get_catalog`
 * `poynt.Catalog.get_full_catalog`
+* `poynt.Catalog.create_catalog`
+* `poynt.Catalog.create_full_catalog`
+* `poynt.Catalog.update_catalog`
 * `poynt.Catalog.get_category`
+* `poynt.Catalog.create_category`
+* `poynt.Catalog.lookup_categories`
+* `poynt.Catalog.delete_category`
+* `poynt.Catalog.update_category`
 
 ### [Products](https://poynt.com/docs/api/#products-index)
 
 * `poynt.Product.get_products`
+* `poynt.Product.get_products_summary`
 * `poynt.Product.lookup_products`
 * `poynt.Product.get_product`
+* `poynt.Product.create_product`
+* `poynt.Product.delete_product`
+* `poynt.Product.update_product`
 
 ### [Taxes](https://poynt.com/docs/api/#taxes-index)
 
 * `poynt.Tax.get_taxes`
 * `poynt.Tax.get_tax`
+* `poynt.Tax.create_tax`
+* `poynt.Tax.delete_tax`
+* `poynt.Tax.update_tax`
 
-### Webhooks
+### [Business Users](https://poynt.com/docs/api/#business-users-index)
 
-* `poynt.Hook.get_hooks`
-* `poynt.Hook.create_hook`
+* `poynt.BusinessUser.get_business_users`
+* `poynt.BusinessUser.get_business_user`

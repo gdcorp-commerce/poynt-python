@@ -100,7 +100,11 @@ class API(object):
                 params=params,
             )
 
-        return r.json(), r.status_code
+        try:
+            json = r.json()
+            return json, r.status_code
+        except ValueError:
+            return None, r.status_code
 
     def access_token_is_expired(self):
         """
@@ -176,7 +180,7 @@ class API(object):
             params=params,
         )
 
-        if status_code is 401 and json['code'] is 'INVALID_ACCESS_TOKEN':
+        if status_code is 401 and json is not None and json['code'] is 'INVALID_ACCESS_TOKEN':
             return self.request(
                 method=method,
                 url=url,

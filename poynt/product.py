@@ -126,6 +126,23 @@ class Product():
         )
 
     @classmethod
+    def delete_product(cls, business_id, product_id):
+        """
+        Deactivates a product. Deactivated products will be removed from all
+        catalog references.
+
+        Arguments:
+        business_id (str): the business ID
+        product_id (str): the product ID
+        """
+
+        api = API.shared_instance()
+        return api.request(
+            url='/businesses/%s/products/%s' % (business_id, product_id),
+            method='DELETE'
+        )
+
+    @classmethod
     def update_product(cls, business_id, product_id, product=None, patch=None, no_remove=True):
         """
         Updates a product by ID. Can either specify the whole product, or an array
