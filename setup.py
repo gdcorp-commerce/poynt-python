@@ -14,7 +14,7 @@ except ImportError:
 
 setup(
     name='poynt',
-    version='0.0.3',
+    version='0.0.4',
     description='The official Poynt Python SDK.',
     long_description=__doc__,
     author='Charles Feng',

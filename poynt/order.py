@@ -4,11 +4,11 @@ from poynt import API
 class Order():
 
     @classmethod
-    def getOrders(cls, business_id, start_at=None, start_offset=None,
-                  end_at=None, limit=None, card_number_first_6=None,
-                  card_number_last_4=None, card_expiration_month=None,
-                  card_expiration_year=None, card_holder_first_name=None,
-                  card_holder_last_name=None, store_id=None):
+    def get_orders(cls, business_id, start_at=None, start_offset=None,
+                   end_at=None, limit=None, card_number_first_6=None,
+                   card_number_last_4=None, card_expiration_month=None,
+                   card_expiration_year=None, card_holder_first_name=None,
+                   card_holder_last_name=None, store_id=None):
         """
         Get all orders at a business by various criteria.
 
@@ -61,7 +61,7 @@ class Order():
         )
 
     @classmethod
-    def getOrder(cls, business_id, order_id):
+    def get_order(cls, business_id, order_id):
         """
         Get a single order at a business.
 

@@ -4,8 +4,8 @@ from poynt import API
 class Catalog():
 
     @classmethod
-    def getCatalogs(cls, business_id, start_at=None, start_offset=None,
-                    end_at=None, limit=None):
+    def get_catalogs(cls, business_id, start_at=None, start_offset=None,
+                     end_at=None, limit=None):
         """
         Get all catalogs at a business.
 
@@ -37,7 +37,7 @@ class Catalog():
         )
 
     @classmethod
-    def getCatalog(cls, business_id, catalog_id):
+    def get_catalog(cls, business_id, catalog_id):
         """
         Get a single catalog for a business.
 
@@ -53,7 +53,7 @@ class Catalog():
         )
 
     @classmethod
-    def getFullCatalog(cls, business_id, catalog_id):
+    def get_full_catalog(cls, business_id, catalog_id):
         """
         Get a catalog by id with all product details info embedded in
         the Catalog.
@@ -70,7 +70,7 @@ class Catalog():
         )
 
     @classmethod
-    def getCategory(cls, business_id, catalog_id, category_id):
+    def get_category(cls, business_id, catalog_id, category_id):
         """
         Get a single category in a catalog for a business.
 

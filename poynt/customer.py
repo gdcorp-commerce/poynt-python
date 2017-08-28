@@ -4,11 +4,11 @@ from poynt import API
 class Customer():
 
     @classmethod
-    def getCustomers(cls, business_id, start_at=None, start_offset=None,
-                     end_at=None, limit=None, card_number_first_6=None,
-                     card_number_last_4=None, card_expiration_month=None,
-                     card_expiration_year=None, card_holder_first_name=None,
-                     card_holder_last_name=None):
+    def get_customers(cls, business_id, start_at=None, start_offset=None,
+                      end_at=None, limit=None, card_number_first_6=None,
+                      card_number_last_4=None, card_expiration_month=None,
+                      card_expiration_year=None, card_holder_first_name=None,
+                      card_holder_last_name=None):
         """
         Get all customers of a business by various criteria.
 
@@ -58,7 +58,7 @@ class Customer():
         )
 
     @classmethod
-    def getCustomer(cls, business_id, customer_id):
+    def get_customer(cls, business_id, customer_id):
         """
         Get a single customer at a business.
 

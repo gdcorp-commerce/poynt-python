@@ -4,13 +4,13 @@ from poynt import API
 class Transaction():
 
     @classmethod
-    def getTransactions(cls, business_id, start_at=None, start_offset=None,
-                        end_at=None, limit=None, card_number_first_6=None,
-                        card_number_last_4=None, card_expiration_month=None,
-                        card_expiration_year=None, card_holder_first_name=None,
-                        card_holder_last_name=None, store_id=None, device_id=None,
-                        search_key=None, action=None, status=None, transaction_ids=None,
-                        auth_only=None, unsettled_only=None, credit_debit_only=None):
+    def get_transactions(cls, business_id, start_at=None, start_offset=None,
+                         end_at=None, limit=None, card_number_first_6=None,
+                         card_number_last_4=None, card_expiration_month=None,
+                         card_expiration_year=None, card_holder_first_name=None,
+                         card_holder_last_name=None, store_id=None, device_id=None,
+                         search_key=None, action=None, status=None, transaction_ids=None,
+                         auth_only=None, unsettled_only=None, credit_debit_only=None):
         """
         Get all transactions at a business by various criteria.
 
@@ -89,7 +89,7 @@ class Transaction():
         )
 
     @classmethod
-    def getTransaction(cls, business_id, transaction_id):
+    def get_transaction(cls, business_id, transaction_id):
         """
         Get a single transaction at a business.
 

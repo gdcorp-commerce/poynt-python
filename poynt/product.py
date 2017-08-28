@@ -4,8 +4,8 @@ from poynt import API
 class Product():
 
     @classmethod
-    def getProducts(cls, business_id, start_at=None, start_offset=None,
-                    end_at=None, limit=None):
+    def get_products(cls, business_id, start_at=None, start_offset=None,
+                     end_at=None, limit=None):
         """
         Get a list of products at a business.
 
@@ -37,7 +37,7 @@ class Product():
         )
 
     @classmethod
-    def lookupProducts(cls, business_id, product_ids):
+    def lookup_products(cls, business_id, product_ids):
         """
         Get a list of products by ID.
 
@@ -58,7 +58,7 @@ class Product():
         )
 
     @classmethod
-    def getProduct(cls, business_id, product_id):
+    def get_product(cls, business_id, product_id):
         """
         Get a single product for a business.
 

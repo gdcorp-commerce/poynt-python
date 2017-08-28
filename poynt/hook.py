@@ -4,7 +4,7 @@ from poynt import API
 class Hook():
 
     @classmethod
-    def getHooks(cls, business_id):
+    def get_hooks(cls, business_id):
         """
         Gets a list of hooks currently subscribed to.
 
@@ -26,8 +26,8 @@ class Hook():
         )
 
     @classmethod
-    def createHook(cls, business_id, delivery_url, secret=None, event_type=None,
-                   event_types=None):
+    def create_hook(cls, business_id, delivery_url, secret=None, event_type=None,
+                    event_types=None):
         """
         Subscribes to a webhook.
 

@@ -4,8 +4,8 @@ from poynt import API
 class Tax():
 
     @classmethod
-    def getTaxes(cls, business_id, start_at=None, start_offset=None,
-                 end_at=None, limit=None):
+    def get_taxes(cls, business_id, start_at=None, start_offset=None,
+                  end_at=None, limit=None):
         """
         Get a list of taxes at a business.
 
@@ -37,7 +37,7 @@ class Tax():
         )
 
     @classmethod
-    def getTax(cls, business_id, tax_id):
+    def get_tax(cls, business_id, tax_id):
         """
         Get a single tax for a business.
 

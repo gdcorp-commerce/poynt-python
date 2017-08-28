@@ -4,7 +4,7 @@ from poynt import API
 class BusinessUser():
 
     @classmethod
-    def getBusinessUsers(cls, business_id):
+    def get_business_users(cls, business_id):
         """
         Get all users at a business.
 
@@ -19,7 +19,7 @@ class BusinessUser():
         )
 
     @classmethod
-    def getBusinessUser(cls, business_id, business_user_id):
+    def get_business_user(cls, business_id, business_user_id):
         """
         Get a single user at a business.
 
