@@ -57,6 +57,8 @@ We'll handle all the request signing, token refresh, etc. for you!
 
 * `poynt.Hook.get_hooks`
 * `poynt.Hook.create_hook`
+* `poynt.Hook.get_hook`
+* `poynt.Hook.delete_hook`
 
 ### [Businesses](https://poynt.com/docs/api/#businesses-index)
 
@@ -89,6 +91,7 @@ We'll handle all the request signing, token refresh, etc. for you!
 * `poynt.Catalog.create_catalog`
 * `poynt.Catalog.create_full_catalog`
 * `poynt.Catalog.update_catalog`
+* `poynt.Catalog.delete_catalog`
 * `poynt.Catalog.get_category`
 * `poynt.Catalog.create_category`
 * `poynt.Catalog.lookup_categories`
