@@ -31,8 +31,8 @@ class API(object):
         if key:
             self.key = key
         else:
-            file = open(filename, 'r')
-            self.key = file.read()
+            f = open(filename, 'r')
+            self.key = f.read()
 
         self.application_id = application_id
         self.env = env
