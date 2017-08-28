@@ -62,6 +62,10 @@ We'll handle all the request signing, token refresh, etc. for you!
 
 * `poynt.Business.get_business`
 
+### [Stores](https://poynt.com/docs/api/#stores-index)
+
+* `poynt.Store.get_store`
+
 ### [Orders](https://poynt.com/docs/api/#orders-index)
 
 * `poynt.Order.get_orders`

@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.0.6 (2017/08/27)
+- Support for `get_store` endpoint.
+
 ### v0.0.5 (2017/08/27)
 - Support for sending cloud messages to terminals: `send_raw_cloud_message` and `send_cloud_message` endpoints.
 - Support for `create_catalog`, `create_full_catalog`, `update_catalog`, `create_category`, `lookup_categories`, `delete_category`, `update_category`, `get_products_summary`, `create_product`, `delete_product`, `update_product`, `create_tax`, `delete_tax`, `update_tax` endpoints.
