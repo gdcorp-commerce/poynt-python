@@ -1,4 +1,4 @@
-# poynt-python
+# Poynt Python SDK
 
 This SDK helps you connect to the Poynt API from your Python apps. You can easily get/create business information, subscribe to webhooks, and send cloud messages to your terminal app.
 
