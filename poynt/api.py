@@ -54,7 +54,7 @@ class API(object):
         self.access_token = None
         self.expires_at = None
 
-    def request_headers(self):
+    def _request_headers(self):
         """
         Private method that generates request headers for Poynt API requests.
         """
@@ -70,8 +70,8 @@ class API(object):
 
         return headers
 
-    def naked_request(self, method, url, json=None, headers=None, form=None,
-                      params=None):
+    def _naked_request(self, method, url, json=None, headers=None, form=None,
+                       params=None):
         """
         Private method that makes a request to Poynt APIs without error protection.
         You shouldn't use this in your SDK methods.
@@ -87,7 +87,7 @@ class API(object):
         params (dict, optional): request params to send in the querystring
         """
 
-        headers = self.request_headers()
+        headers = self._request_headers()
         method = method or 'GET'
 
         if form:
@@ -113,7 +113,7 @@ class API(object):
         except ValueError:
             return None, r.status_code
 
-    def access_token_is_expired(self):
+    def _access_token_is_expired(self):
         """
         Private method that tells you if your access token doesn't exist,
         or is expired.
@@ -129,7 +129,7 @@ class API(object):
 
         return False
 
-    def authenticate(self):
+    def _authenticate(self):
         """
         Authenticates with Poynt API using your application private key.
         """
@@ -144,7 +144,7 @@ class API(object):
             'exp': now + 1000 * 60 * 60 * 24 * 365,
         }, self.key, algorithm='RS256')
 
-        json, status_code = self.naked_request(
+        json, status_code = self._naked_request(
             method='POST',
             url='/token',
             form={
@@ -175,10 +175,10 @@ class API(object):
         force_token_refresh (bool, optional): whether to force refresh the access token or not
         """
 
-        if self.access_token_is_expired() or force_token_refresh:
-            self.authenticate()
+        if self._access_token_is_expired() or force_token_refresh:
+            self._authenticate()
 
-        json, status_code = self.naked_request(
+        json, status_code = self._naked_request(
             method=method,
             url=url,
             json=json,
