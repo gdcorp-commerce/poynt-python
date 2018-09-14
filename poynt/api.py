@@ -8,7 +8,9 @@ import poynt
 poynt_urls = {
     'dev': 'https://services-dev.poynt.net',
     'ci': 'https://services-ci.poynt.net',
+    'st': 'https://services-st.poynt.net',
     'prod': 'https://services.poynt.net',
+    'eu': 'https://services-eu.poynt.net'
 }
 
 shared_instance = None
@@ -16,7 +18,7 @@ shared_instance = None
 
 class API(object):
 
-    def __init__(self, key=None, filename=None, env=None, application_id=None):
+    def __init__(self, key=None, filename=None, env=None, application_id=None, region=None):
         """
         Instantiates the API class, which creates and authenticates requests
         to the Poynt API.
@@ -44,11 +46,15 @@ class API(object):
         self.application_id = application_id
         self.api_version = '1.2'
 
-        if env in poynt_urls:
-            self.env = env
+        if region in poynt_urls:
+            self.region = region
+            self.api_root = poynt_urls[self.region]
         else:
-            self.env = 'prod'
-        self.api_root = poynt_urls[self.env]
+            if env in poynt_urls:
+                self.env = env
+            else:
+                self.env = 'prod'
+            self.api_root = poynt_urls[self.env]
 
         self.session = requests.Session()
         self.access_token = None
@@ -216,7 +222,8 @@ class API(object):
             key=poynt.key,
             filename=poynt.filename,
             env=poynt.env,
-            application_id=poynt.application_id
+            application_id=poynt.application_id,
+            region=poynt.region
         )
 
         return shared_instance

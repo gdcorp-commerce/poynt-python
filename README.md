@@ -32,6 +32,11 @@ import poynt
 poynt.application_id = 'urn:aid:your-application-id'
 poynt.key = '-----BEGIN RSA PRIVATE KEY-----\n.....\n-----END RSA PRIVATE KEY-----'
 ```
+If you downloaded your API credentials from EU Dev Portal (https://eu.poynt.net) specify the region. This will ensure that the SDK is sending API calls to EU API endpoint (https://services-eu.poynt.net)
+
+```poynt
+poynt.region = 'eu'
+```
 
 Then, make a request signed with your app private key:
 

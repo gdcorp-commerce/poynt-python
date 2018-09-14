@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.0.12 (2018/09/14)
+- Support for EU datacenter (and ST env).
+
 ### v0.0.10 (2017/08/28)
 - Support for `delete_catalog`, `get_hook`, `delete_hook` endpoints.
 
