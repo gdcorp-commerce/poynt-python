@@ -9,6 +9,7 @@ application_id = None
 env = None
 filename = None
 key = None
+region = None
 
 from poynt.api import API
 
