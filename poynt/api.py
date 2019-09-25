@@ -6,11 +6,19 @@ import uuid
 import poynt
 
 poynt_urls = {
-    'dev': 'https://services-dev.poynt.net',
+    'dev': 'https://services-ci.poynt.net',
     'ci': 'https://services-ci.poynt.net',
     'st': 'https://services-st.poynt.net',
     'prod': 'https://services.poynt.net',
     'eu': 'https://services-eu.poynt.net'
+}
+
+poynt_web_urls = {
+    'dev': 'http://local.poynt.net/api/services',
+    'ci': 'https://ci.poynt.net/api/services',
+    'st': 'https://st.poynt.net/api/services',
+    'prod': 'https://eu.poynt.net/api/services',
+    'eu': 'https://poynt.net/api/services'
 }
 
 shared_instance = None
@@ -49,12 +57,14 @@ class API(object):
         if region in poynt_urls:
             self.region = region
             self.api_root = poynt_urls[self.region]
+            self.web_root = poynt_web_urls[self.region]
         else:
             if env in poynt_urls:
                 self.env = env
             else:
                 self.env = 'prod'
             self.api_root = poynt_urls[self.env]
+            self.web_root = poynt_web_urls[self.env]
 
         self.session = requests.Session()
         self.access_token = None
@@ -77,7 +87,7 @@ class API(object):
         return headers
 
     def _naked_request(self, method, url, json=None, headers=None, form=None,
-                       params=None):
+                       params=None, app='API'):
         """
         Private method that makes a request to Poynt APIs without error protection.
         You shouldn't use this in your SDK methods.
@@ -91,15 +101,17 @@ class API(object):
         headers (dict, optional): request headers to send
         form (dict, optional): request data to send, encoded as a form. Use this or json
         params (dict, optional): request params to send in the querystring
+        app (str, optional): API or WEB. defaults to API
         """
 
         headers = self._request_headers()
         method = method or 'GET'
+        url_root = self.web_root if app is 'WEB' else self.api_root
 
         if form:
             r = self.session.request(
                 method,
-                url=self.api_root + url,
+                url=url_root + url,
                 data=form,
                 headers=headers,
                 params=params,
@@ -107,7 +119,7 @@ class API(object):
         else:
             r = self.session.request(
                 method,
-                url=self.api_root + url,
+                url=url_root + url,
                 json=json,
                 headers=headers,
                 params=params,
@@ -164,7 +176,7 @@ class API(object):
             self.expires_at = now + json['expiresIn']
 
     def request(self, method, url, json=None, headers=None, form=None,
-                params=None, force_token_refresh=False):
+                params=None, force_token_refresh=False, app='API'):
         """
         Makes a request against API service. Refreshes your access token if
         necessary. Use this for all requests in the SDK!
@@ -179,6 +191,7 @@ class API(object):
         form (dict, optional): request data to send, encoded as a form. Use this or JSON
         params (dict, optional): request params to send in the querystring
         force_token_refresh (bool, optional): whether to force refresh the access token or not
+        app (str, optional): API or WEB. defaults to API
         """
 
         if self._access_token_is_expired() or force_token_refresh:
@@ -191,6 +204,7 @@ class API(object):
             headers=headers,
             form=form,
             params=params,
+            app=app,
         )
 
         if status_code is 401 and json is not None and json['code'] is 'INVALID_ACCESS_TOKEN':
@@ -202,6 +216,7 @@ class API(object):
                 form=form,
                 params=params,
                 force_token_refresh=True,
+                app=app,
             )
 
         return json, status_code
