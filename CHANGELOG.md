@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.0.13 (2019/09/25)
+- Support for reports APIs: `get_reports`, `create_report`
+
 ### v0.0.12 (2018/09/14)
 - Support for EU datacenter (and ST env).
 
