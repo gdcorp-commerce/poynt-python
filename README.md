@@ -130,3 +130,20 @@ We'll handle all the request signing, token refresh, etc. for you!
 
 * `poynt.BusinessUser.get_business_users`
 * `poynt.BusinessUser.get_business_user`
+
+## Pagination
+
+HATEOAS pagination using the Poynt API is now available to fetch large numbers of transactions for a business. An example is as follows:
+
+```
+transactions = []
+
+docs, status_code = poynt.Transaction.get_transactions('c00c6ded-ab55-4305-b61e-be7e59e14bdd', start_at='2019-10-14', limit=50)
+transactions += docs['transactions']
+
+while len(docs.get('links', [])):
+  docs, status_code = poynt.Transaction.get_transactions('c00c6ded-ab55-4305-b61e-be7e59e14bdd', link=docs['links'][0]['href'])
+  transactions += docs['transactions']
+
+print transactions
+```

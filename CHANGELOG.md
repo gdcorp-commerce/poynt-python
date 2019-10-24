@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.0.14 (2019/10/23)
+- Support for HATEOAS pagination for transactions using `get_transactions`
+
 ### v0.0.13 (2019/09/25)
 - Support for reports APIs: `get_reports`, `create_report`
 

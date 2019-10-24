@@ -10,7 +10,8 @@ class Transaction():
                          card_expiration_year=None, card_holder_first_name=None,
                          card_holder_last_name=None, store_id=None, device_id=None,
                          search_key=None, action=None, status=None, transaction_ids=None,
-                         auth_only=None, unsettled_only=None, credit_debit_only=None):
+                         auth_only=None, unsettled_only=None, credit_debit_only=None,
+                         link=None):
         """
         Get all transactions at a business by various criteria.
 
@@ -39,7 +40,15 @@ class Transaction():
         auth_only (bool, optional): only fetch auth only txns
         unsettled_only (bool, optional): only fetch unsettled txns
         credit_debit_only (bool, optional): only fetch credit/debit txns
+        link (str, optional): HATEOAS link to fetch next page of transactions
         """
+
+        if link:
+          api = API.shared_instance()
+          return api.request(
+              url=link,
+              method='GET',
+          )
 
         params = {}
         if start_at is not None:
