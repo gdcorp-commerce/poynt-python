@@ -8,7 +8,7 @@ class Order():
                    end_at=None, limit=None, card_number_first_6=None,
                    card_number_last_4=None, card_expiration_month=None,
                    card_expiration_year=None, card_holder_first_name=None,
-                   card_holder_last_name=None, store_id=None):
+                   card_holder_last_name=None, store_id=None, link=None):
         """
         Get all orders at a business by various criteria.
 
@@ -27,7 +27,15 @@ class Order():
         card_holder_first_name (str, optional): return orders with first name matching this
         card_holder_last_name (str, optional): return orders with last name matching this
         store_id (str, optional): return orders from this store
+        link (str, optional): HATEOAS link to fetch next page of orders
         """
+
+        if link:
+            api = API.shared_instance()
+            return api.request(
+                url=link,
+                method='GET',
+            )
 
         params = {}
         if start_at is not None:

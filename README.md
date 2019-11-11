@@ -133,7 +133,7 @@ We'll handle all the request signing, token refresh, etc. for you!
 
 ## Pagination
 
-HATEOAS pagination using the Poynt API is now available to fetch large numbers of transactions for a business. An example is as follows:
+HATEOAS pagination using the Poynt API is now available to fetch large numbers of transactions or orders for a business. An example is as follows:
 
 ```
 transactions = []
