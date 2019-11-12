@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.0.15 (2019/11/11)
+- Support for HATEOAS pagination for orders using `get_orders`
+
 ### v0.0.14 (2019/10/23)
 - Support for HATEOAS pagination for transactions using `get_transactions`
 
