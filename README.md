@@ -24,6 +24,7 @@ import poynt
 poynt.application_id = 'urn:aid:your-application-id'
 poynt.filename = '/path/to/your/key.pem'
 ```
+
 or
 
 ```python
@@ -32,6 +33,7 @@ import poynt
 poynt.application_id = 'urn:aid:your-application-id'
 poynt.key = '-----BEGIN RSA PRIVATE KEY-----\n.....\n-----END RSA PRIVATE KEY-----'
 ```
+
 If you downloaded your API credentials from EU Dev Portal (https://eu.poynt.net) specify the region. This will ensure that the SDK is sending API calls to EU API endpoint (https://services-eu.poynt.net)
 
 ```poynt
@@ -55,81 +57,89 @@ We'll handle all the request signing, token refresh, etc. for you!
 
 ### [CloudMessages](https://poynt.com/docs/api/#cloudmessages-index)
 
-* `poynt.CloudMessage.send_cloud_message`
-* `poynt.CloudMessage.send_raw_cloud_message`
+- `poynt.CloudMessage.send_cloud_message`
+- `poynt.CloudMessage.send_raw_cloud_message`
 
 ### [Hooks](https://poynt.com/docs/api/#hooks-index)
 
-* `poynt.Hook.get_hooks`
-* `poynt.Hook.create_hook`
-* `poynt.Hook.get_hook`
-* `poynt.Hook.delete_hook`
+- `poynt.Hook.get_hooks`
+- `poynt.Hook.create_hook`
+- `poynt.Hook.get_hook`
+- `poynt.Hook.delete_hook`
 
 ### [Businesses](https://poynt.com/docs/api/#businesses-index)
 
-* `poynt.Business.get_business`
+- `poynt.Business.get_business`
 
 ### [Stores](https://poynt.com/docs/api/#stores-index)
 
-* `poynt.Store.get_store`
+- `poynt.Store.get_store`
 
 ### [Orders](https://poynt.com/docs/api/#orders-index)
 
-* `poynt.Order.get_orders`
-* `poynt.Order.get_order`
+- `poynt.Order.get_orders`
+- `poynt.Order.get_order`
 
 ### [Transactions](https://poynt.com/docs/api/#transactions-index)
 
-* `poynt.Transaction.get_transactions`
-* `poynt.Transaction.get_transaction`
+- `poynt.Transaction.get_transactions`
+- `poynt.Transaction.get_transaction`
 
 ### [Customers](https://poynt.com/docs/api/#customers-index)
 
-* `poynt.Customer.get_customers`
-* `poynt.Customer.get_customer`
+- `poynt.Customer.get_customers`
+- `poynt.Customer.get_customer`
 
 ### [Catalogs](https://poynt.com/docs/api/#catalogs-index)
 
-* `poynt.Catalog.get_catalogs`
-* `poynt.Catalog.get_catalog`
-* `poynt.Catalog.get_full_catalog`
-* `poynt.Catalog.create_catalog`
-* `poynt.Catalog.create_full_catalog`
-* `poynt.Catalog.update_catalog`
-* `poynt.Catalog.delete_catalog`
-* `poynt.Catalog.get_category`
-* `poynt.Catalog.create_category`
-* `poynt.Catalog.lookup_categories`
-* `poynt.Catalog.delete_category`
-* `poynt.Catalog.update_category`
+- `poynt.Catalog.get_catalogs`
+- `poynt.Catalog.get_catalog`
+- `poynt.Catalog.get_full_catalog`
+- `poynt.Catalog.create_catalog`
+- `poynt.Catalog.create_full_catalog`
+- `poynt.Catalog.update_catalog`
+- `poynt.Catalog.delete_catalog`
+- `poynt.Catalog.get_category`
+- `poynt.Catalog.create_category`
+- `poynt.Catalog.lookup_categories`
+- `poynt.Catalog.delete_category`
+- `poynt.Catalog.update_category`
 
 ### [Products](https://poynt.com/docs/api/#products-index)
 
-* `poynt.Product.get_products`
-* `poynt.Product.get_products_summary`
-* `poynt.Product.lookup_products`
-* `poynt.Product.get_product`
-* `poynt.Product.create_product`
-* `poynt.Product.delete_product`
-* `poynt.Product.update_product`
+- `poynt.Product.get_products`
+- `poynt.Product.get_products_summary`
+- `poynt.Product.lookup_products`
+- `poynt.Product.get_product`
+- `poynt.Product.create_product`
+- `poynt.Product.delete_product`
+- `poynt.Product.update_product`
 
 ### Reports
 
-* `poynt.Report.get_reports`
-* `poynt.Report.create_report`
+- `poynt.Report.get_reports`
+- `poynt.Report.create_report`
 
 ### [Taxes](https://poynt.com/docs/api/#taxes-index)
 
-* `poynt.Tax.get_taxes`
-* `poynt.Tax.get_tax`
-* `poynt.Tax.create_tax`
-* `poynt.Tax.delete_tax`
-* `poynt.Tax.update_tax`
+- `poynt.Tax.get_taxes`
+- `poynt.Tax.get_tax`
+- `poynt.Tax.create_tax`
+- `poynt.Tax.delete_tax`
+- `poynt.Tax.update_tax`
 
 ### [Business Users](https://poynt.com/docs/api/#business-users-index)
 
-* `poynt.BusinessUser.get_business_users`
-* `poynt.BusinessUser.get_business_user`
+- `poynt.BusinessUser.get_business_users`
+- `poynt.BusinessUser.get_business_user`
+
+### Business Applications
+
+- `poynt.BusinessApplication.get_business_application`
+- `poynt.BusinessApplication.get_business_application_status`
+- `poynt.BusinessApplication.get_business_account`
+- `poynt.BusinessApplication.get_business_orders`
+- `poynt.BusinessApplication.get_business_application_profile`
 
 ## Pagination
 
