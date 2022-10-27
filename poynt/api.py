@@ -207,7 +207,7 @@ class API(object):
             app=app,
         )
 
-        if status_code is 401 and json is not None and json['code'] is 'INVALID_ACCESS_TOKEN':
+        if status_code == 401 and json is not None and json['code'] is 'INVALID_ACCESS_TOKEN':
             return self.request(
                 method=method,
                 url=url,
